@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network3" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="St">
+			<state id="atacar" />
+			<state id="recoger_arma" />
+			<state id="recoger_energía" />
+			<state id="explorar" />
+			<state id="huir" />
+			<state id="detectar_peligro" />
+			<probabilities>0.1666666666666667 0.1666666666666667 0.1666666666666667 0.1666666666666667 0.1666666666666667 0.1666666666666667</probabilities>
+		</cpt>
+		<cpt id="future_bot">
+			<state id="atacar" />
+			<state id="buscar_armas" />
+			<state id="buscar_energia" />
+			<state id="explorar" />
+			<state id="huir" />
+			<state id="detectar_peligro" />
+			<parents>St</parents>
+			<probabilities>0.9999500000000001 1e-05 1e-05 1e-05 1e-05 1e-05 0.8332933333333336 0.1666666666666667 1e-05 1e-05 1e-05 1e-05 1e-05 1e-05 0.9999500000000001 1e-05 1e-05 1e-05 0.249995 0.249995 0.249995 0.249995 1e-05 1e-05 0.3333233333333334 1e-05 1e-05 0.3333233333333334 0.3333233333333334 1e-05 0.99995 1e-05 1e-05 1e-05 1e-05 1e-05</probabilities>
+		</cpt>
+		<cpt id="H">
+			<state id="Alta" />
+			<state id="Baja" />
+			<parents>future_bot</parents>
+			<probabilities>0.7 0.3 0.5 0.5 0.3 0.7 0.7 0.3 0.3 0.7 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="W">
+			<state id="Armado" />
+			<state id="Desarmado" />
+			<parents>future_bot</parents>
+			<probabilities>0.9 0.1 0.1 0.9 0.5 0.5 0.7 0.3 0.1 0.9 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="OW">
+			<state id="Si" />
+			<state id="No" />
+			<parents>future_bot</parents>
+			<probabilities>0.49 0.51 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="HN">
+			<state id="Si" />
+			<state id="No" />
+			<parents>future_bot</parents>
+			<probabilities>0.9 0.1 0.5 0.5 0.5 0.5 0.7 0.3 0.5 0.5 0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="NE">
+			<state id="Si" />
+			<state id="No" />
+			<parents>future_bot</parents>
+			<probabilities>0.99999 1e-05 0.6 0.4 0.6 0.4 1e-05 0.99999 1 0 1e-05 0.99999</probabilities>
+		</cpt>
+		<cpt id="PW">
+			<state id="Si" />
+			<state id="No" />
+			<parents>future_bot</parents>
+			<probabilities>0.5 0.5 0.1 0.9 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="PH">
+			<state id="Si" />
+			<state id="No" />
+			<parents>future_bot</parents>
+			<probabilities>0.7 0.3 0.5 0.5 0.1 0.9 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.1.3724.0 ACADEMIC" name="Network3">
+			<node id="St">
+				<name>Estado del Bot</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>207 177 279 240</position>
+				<barchart active="true" width="187" height="126" />
+			</node>
+			<node id="H">
+				<name>Salud</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>178 392 230 429</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="W">
+				<name>Arma</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>332 392 383 428</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="OW">
+				<name>Armas de los oponentes</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>488 392 535 429</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="HN">
+				<name>Sonido</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>639 395 687 430</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="NE">
+				<name>Enemigos Cercanos</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>794 399 845 431</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="PW">
+				<name>Armas cercanas</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>943 399 993 435</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="PH">
+				<name>Paquete de Salud Cercano</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1089 401 1145 436</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="future_bot">
+				<name>Estado Futuro del Bot</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>576 179 648 242</position>
+				<barchart active="true" width="203" height="126" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
