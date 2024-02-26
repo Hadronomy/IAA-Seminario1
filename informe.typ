@@ -25,13 +25,14 @@ Y está basada en la publicación #link("https://www.researchgate.net/publicatio
 
 #tablex(
   columns: 4, 
-  rows: 2,
+  rows: 3,
   align: center + horizon,
   auto-vlines: false,
   repeat-header: true,
-  [*Identificador ALU*], [*Apellidos*], [*Nombres*],[*Participación*],
+  [*Identificador ALU*], [*Apellidos*], [*Nombres*], [*Participación*],
   [alu0101480541], [Santana González], [Pablo], [50%],
-  [alu0101495934], [Hernández Jiménez], [Pablo], [50%]
+  [alu0101495934], [Hernández Jiménez], [Pablo], [50%],
+  [alu0101437989], [Fontenla León], [Álvaro], [%]
 )
 
 #pagebreak()
@@ -65,12 +66,13 @@ Se plantean las siguientes preguntas:
 
 ===  ¿Por qué crees que se ha hecho así?
 
-Porque si la causalidad se hubiera representado de la manera tradicional, la red sería mucho más compleja y las tablas de probabilidad condicional serían mucho más grandes, tanto que sería imposible de manejar.
+La principal razón por la que la red no se ha diseñado de esta manera es el tamaño de las tablas de probabilidad condicional. La red se ha diseñado estableciendo cómo se esperaría que el personaje perciba su entorno y actúe en función de sus acciones futuras y del estado en el que se encontrará en el siguiente paso del tiempo, haciendo que las variables en $t$, dependan del estado del bot en $t+1$, reduciendo así el tamaño de las tablas de manera significativa.
 
 === ¿Cómo sería la red puesta de forma causal? ¿Cuál el tamaño de las tablas?
 
 En la red causal, el nodo de $S_(t+1)$ dependería de todos los nodos de $S_t$, $H$, $W$, $"OW"$, $"HN"$, $"NE"$, $"PW"$, $"PH"$. 
 Por lo que el tamaño de las tablas de probabilidad condicional sería de $2^7 * 6 = 768$ combinaciones a rellenar.
+Podemos observar que las combinaciones a rellenar son significativamente mayores si la red se diseñara de manera causal.
 
 = Personalidad del Bot
 
