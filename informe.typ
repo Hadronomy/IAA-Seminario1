@@ -25,12 +25,12 @@ Y está basada en la publicación #link("https://www.researchgate.net/publicatio
 
 #tablex(
   columns: 4, 
-  rows: 2,
+  rows: 3,
   align: center + horizon,
   auto-vlines: false,
   repeat-header: true,
-  [*Identificador ALU*], [*Apellidos*], [*Nombres*],[*Participación*],
-  [alu0101\*\*\*\*\*\*], [Santana González], [Pablo], [50%],
+  [*Identificador ALU*], [*Apellidos*], [*Nombres*], [*Participación*],
+  [alu0101480541], [Santana González], [Pablo], [50%],
   [alu0101495934], [Hernández Jiménez], [Pablo], [50%],
   [alu0101437989], [Fontenla León], [Álvaro], [%]
 )
