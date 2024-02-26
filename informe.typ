@@ -195,7 +195,8 @@ Tambien tiene una probabilidad alta de explorar si detecta un sonido.
   [$"No"$], [1e-05], [0.4], [0.4], [0.9999], [0], [0.9999]
 )
 
-Para esta tabla se ha considerado que el bot tiene una probabilidad alta de atacar si tiene enemigos cercanos, una probabilidad alta de buscar armas si no tiene enemigos cercanos y soló huirá si hay enemigos cercanos.
+Para esta tabla se ha considerado que el bot tiene una probabilidad alta de atacar si tiene enemigos cercanos, 
+una probabilidad alta de buscar armas si no tiene enemigos cercanos y soló huirá si hay enemigos cercanos.
 
 == Estado del Sensor del Bot $"PW"$
 
@@ -220,4 +221,63 @@ Para esta tabla se ha considerado que el bot tiene una probabilidad alta de busc
 #pagebreak()
 
 = Ejemplos de Calculo con el `GeNIe`
-#lorem(80)
+
+== Ejemplo 1
+
+#figure(
+  image("assets/example1.png"),
+  caption: ["Ejemplo 1"]
+)
+
+Como se puede observar en la imagen, si el estado actual del
+bot es *atacar*, tiene la salud alta, no detecta sonido y no 
+tiene enemigos cercanos, el estado del bot en $S_(t+1)$ tendrá una probabilidad alta de ser *explorar*.
+
+== Ejemplo 2
+
+#figure(
+  image("assets/example2.png"),
+  caption: ["Ejemplo 2"]
+)
+
+Como se puede observar en la imagen, si el estado actual del bot
+es *huir* y tiene la salud baja, está armado y tiene enemigos cercanos lo más probable es que ataque en $S_(t+1)$, 
+lo que encaja con la personalidad agresiva del bot.
+
+#pagebreak()
+
+== Ejemplo 3
+
+#figure(
+  image("assets/example3.png"),
+  caption: ["Ejemplo 3"]
+)
+
+En este caso se puede observar que si el estado actual del bot es *detectar_peligro* con casi total seguridad, 
+incluso con la salud baja y desarmado, 
+el bot atacará en $S_(t+1)$. Es decir el bot si se siente amenazado atacará aunque no tenga armas, usando cuerpo a cuerpo o lo que pueda.
+
+== Ejemplo 4
+
+#figure(
+  image("assets/example4.png"),
+  caption: ["Ejemplo 4"]
+)
+
+En esta situación el bot se encuentra en un estado de *explorar*, tiene la salud alta, está desarmado y tiene enemigos cercanos.
+Por tanto la decisión más probable del bot en $S_(t+1)$ es 
+es buscar un arma y como observaremos en el siguiente ejemplo,
+tras encontrar el arma, lo siguiente que hará será atacar.
+
+#pagebreak()
+
+== Ejemplo 5
+
+#figure(
+  image("assets/example5.png"),
+  caption: ["Ejemplo 5"]
+)
+
+Como mencionado en el ejemplo, tras encontrar un arma y tener enemigos cercanos, 
+el bot con bastante seguridad atacará en $S_(t+1)$.
+
