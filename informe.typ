@@ -34,9 +34,9 @@ Y está basada en la publicación #link("https://www.researchgate.net/publicatio
   auto-vlines: false,
   repeat-header: true,
   [*Identificador ALU*], [*Apellidos*], [*Nombres*], [*Participación*],
-  [alu0101480541], [Santana González], [Pablo], [50%],
-  [alu0101495934], [Hernández Jiménez], [Pablo], [50%],
-  [alu0101437989], [Fontenla León], [Álvaro], [%]
+  [alu0101480541], [Santana González], [Pablo], [33.3%],
+  [alu0101495934], [Hernández Jiménez], [Pablo], [33.3%],
+  [alu0101437989], [Fontenla León], [Álvaro], [33.3%]
 )
 
 #pagebreak()
