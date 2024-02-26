@@ -4,7 +4,11 @@
 #show: project.with(
   title: "Seminario 1",
   subtitle: "Redes Bayesianas en Juegos",
-  author: ("Pablo Santana González", "Pablo Hernández Jiménez"),
+  author: (
+    "Pablo Santana González", 
+    "Pablo Hernández Jiménez", 
+    "Álvaro Fontenla León"
+  ),
   affiliation: "Universidad de La Laguna",
   date: datetime.today().display(),
   Licence: "Curso 2023-2024",
