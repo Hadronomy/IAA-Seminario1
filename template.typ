@@ -34,7 +34,7 @@
   show raw.where(block: false) : it => h(0.5em) + box(fill: primary-color.lighten(90%), outset: 0.2em, it) + h(0.5em)
 
   // Set body font family.
-  set text(font: body-font, lang: "fr", 12pt)
+  set text(font: body-font, lang: "es", 12pt)
   show heading: set text(font: sans-font, fill: primary-color)
 
   //heading numbering

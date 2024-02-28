@@ -1,6 +1,8 @@
 #import "template.typ": *
 #import "@preview/tablex:0.0.8": tablex, hlinex, vlinex, colspanx, rowspanx
 
+#set math.equation(numbering: "(1)")
+
 #show: project.with(
   title: "Seminario 1",
   subtitle: "Redes Bayesianas en Juegos",
@@ -23,7 +25,7 @@
 En este seminario se va a realizar el diseño y análisis de una red bayesiana que modela el comportamiento de un bot en un videojuego.
 
 La implementación de la red bayesiana se ha realizado con el software `GeNIe` y se ha exportado a un archivo `.xdsl`.
-Y está basada en la publicación #link("https://www.researchgate.net/publication/222529659_Teaching_Bayesian_Behaviours_to_Video_Game_Characters")["Teaching Bayesian Behaviours to Video Game Characters"].
+Y está basada en la publicación "Teaching Bayesian Behaviours to Video Game Characters". @article
 
 == Porcentaje de Participación
 
@@ -46,7 +48,7 @@ Y está basada en la publicación #link("https://www.researchgate.net/publicatio
 #figure(
   image("assets/GeNIe.png"),
   caption: ["Red Bayesiana"]
-)
+) <red_bayesiana>
 
 == Descripción de la Red
 
@@ -59,7 +61,7 @@ $
     &P("HN"|S_(t+1))\
     &P("NE"|S_(t+1))\
     &P("PW"|S_(t+1))\
-    &P("PH"|S_(t+1))\
+    &P("PH"|S_(t+1))
 $
  
 == Respuesta a Cuestion Planteada en el Apartado 2
@@ -281,3 +283,6 @@ tras encontrar el arma, lo siguiente que hará será atacar.
 Como mencionado en el ejemplo, tras encontrar un arma y tener enemigos cercanos, 
 el bot con bastante seguridad atacará en $S_(t+1)$.
 
+#pagebreak()
+
+#bibliography("bibliography.bib")
