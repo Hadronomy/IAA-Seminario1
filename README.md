@@ -9,6 +9,8 @@
   </p>
 </html>
 
+![Demo animation](./.github/images/demo.svg)
+
 <!-- [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) -->
 
 ## Installation
