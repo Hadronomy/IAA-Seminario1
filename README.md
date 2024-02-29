@@ -12,6 +12,8 @@
     - [Clone the repository](#clone-the-repository)
     - [Install the dependencies](#install-the-dependencies)
   - [Usage](#usage)
+    - [Use poetry shell](#use-poetry-shell)
+    - [Poetry `run` command](#poetry-run-command)
   - [Contributing](#contributing)
 
 ## Installation
@@ -34,8 +36,22 @@ poetry install
 
 ## Usage
 
+### Use poetry shell
+
+```bash
+poetry shell
+```
+
+and then
+
 ```bash
 python iaa_seminario1 --help
+```
+
+### Poetry `run` command
+
+```bash
+poetry run iaa_seminario1 --help
 ```
 
 ## Contributing
