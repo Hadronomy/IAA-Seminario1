@@ -19,6 +19,9 @@ def evidence(net, node):
 
 @app.command()
 def main():
+    """
+    Reads the bot model and asks for the evidence of each node
+    """
     net = pysmile.Network()
     net.read_file("assets/ModeladoBot.xdsl")
     net.get_outcome_ids
