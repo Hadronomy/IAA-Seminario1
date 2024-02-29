@@ -1,6 +1,9 @@
 import pysmile
 import pysmile_license  # noqa: 403
 import typer
+import pandas as pd
+import numpy as np
+import warnings
 from InquirerPy import inquirer
 
 app = typer.Typer()
@@ -30,8 +33,17 @@ def main():
             net = evidence(net, node)
 
     net.update_beliefs()
-    print(net.get_node_value("future_bot"))
+    future_probability = np.array(net.get_node_value("future_bot"))
+    tags = np.array(net.get_outcome_ids("future_bot"))
+    dataframe = pd.DataFrame(future_probability, index=tags, columns=["Probability"])
+    sample = dataframe.sample(n=1, weights="Probability")
+    next_state = sample.index[0]
+    print(f"Next state of the bot: {next_state}")
 
 
 if __name__ == "__main__":
-    app()
+    with warnings.catch_warnings():
+        # Supress all numpy warnings:
+        # pysmile is
+        warnings.filterwarnings("ignore", module=r"numpy")
+        app()
