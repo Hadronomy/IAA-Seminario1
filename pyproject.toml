@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "iaa-seminario1"
+version = "0.1.0"
+description = ""
+authors = ["Pablo Hernández <17086478+Hadronomy@users.noreply.github.com>"]
+# readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11"
+
+
+[[tool.poetry.source]]
+name = "pysmile"
+url = "https://support.bayesfusion.com/pysmile-A"
+priority = "supplemental"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
