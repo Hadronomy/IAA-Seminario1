@@ -8,6 +8,7 @@ authors = ["Pablo Hernández <17086478+Hadronomy@users.noreply.github.com>"]
 [tool.poetry.dependencies]
 python = "3.10.*"
 pysmile = {version = "^2.2.0", source = "pysmile"}
+typer = {version = "^0.9.0", extras = ["all"]}
 
 [[tool.poetry.source]]
 name = "pysmile"
