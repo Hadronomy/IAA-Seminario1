@@ -44,6 +44,7 @@ def main():
 if __name__ == "__main__":
     with warnings.catch_warnings():
         # Supress all numpy warnings:
-        # pysmile is
+        # pysmile is setting the smallest_subnormal float64 value to 0
+        # which is quite dumb, but we can't do anything about it
         warnings.filterwarnings("ignore", module=r"numpy")
         app()
