@@ -1,20 +1,15 @@
-# <center>Project Name</center>
+<html>
+  <h1 align="center">IAA-Seminario1</h1>
+  <p align="center">Using bayesian netwroks for just about everything</p>
 
-<center>Short description of the project.</center>
+  <p align="center">
+    <a href="#installation">Installation</a> |
+    <a href="#usage">Usage</a> |
+    <a href="#contributing">Contributing</a>
+  </p>
+</html>
 
 <!-- [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) -->
-
-## Table of Contents
-
-- [Project Name](#project-name)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-    - [Clone the repository](#clone-the-repository)
-    - [Install the dependencies](#install-the-dependencies)
-  - [Usage](#usage)
-    - [Use poetry shell](#use-poetry-shell)
-    - [Poetry `run` command](#poetry-run-command)
-  - [Contributing](#contributing)
 
 ## Installation
 
