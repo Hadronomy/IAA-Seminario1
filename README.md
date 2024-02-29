@@ -1,6 +1,6 @@
 <html>
   <h1 align="center">IAA-Seminario1</h1>
-  <p align="center">Using bayesian netwroks for just about everything</p>
+  <p align="center">Using bayesian networks for just about everything</p>
 
   <p align="center">
     <a href="#installation">Installation</a> |
