@@ -22,4 +22,5 @@ def main():
     net.update_beliefs();
     print(net.get_node_value("future_bot"));
 
-main();
+if __name__ == "__main__":
+    main();
