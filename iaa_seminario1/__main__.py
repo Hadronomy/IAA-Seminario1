@@ -1,14 +1,14 @@
 import pysmile;
 import pysmile_license;
 import typer;
+from InquirerPy import inquirer;
 
 app = typer.Typer();
 
 def evidence(net, node):
     ids = net.get_outcome_ids(node);
     name = net.get_node_name(node);
-    print(f"Introduce el estado del bot en {name}:", ids);
-    selection = input();
+    selection = inquirer.select(f"Introduce el estado del bot en \"{name}\":", choices=ids, default=None).execute();
     if selection in ids:
         net.set_evidence(node, selection);
     return net;
