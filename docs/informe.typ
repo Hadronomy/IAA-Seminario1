@@ -15,7 +15,7 @@
   date: datetime.today().display(),
   Licence: "Curso 2023-2024",
   UE: "Inteligencia Artificial Avanzada",
-  logo: "assets/ull-logo.png",
+  logo: "../assets/ull-logo.png",
   main_color: "#5c068c",
   toc_title: "Índice",
 )
@@ -46,7 +46,7 @@ Y está basada en la publicación "Teaching Bayesian Behaviours to Video Game Ch
 = Red Utilizada
 
 #figure(
-  image("assets/GeNIe.png"),
+  image("../assets/GeNIe.png"),
   caption: ["Red Bayesiana"]
 ) <red_bayesiana>
 
@@ -227,7 +227,7 @@ Para esta tabla se ha considerado que el bot tiene una probabilidad alta de busc
 == Ejemplo 1
 
 #figure(
-  image("assets/example1.png"),
+  image("../assets/example1.png"),
   caption: ["Ejemplo 1"]
 )
 
@@ -238,7 +238,7 @@ tiene enemigos cercanos, el estado del bot en $S_(t+1)$ tendrá una probabilidad
 == Ejemplo 2
 
 #figure(
-  image("assets/example2.png"),
+  image("../assets/example2.png"),
   caption: ["Ejemplo 2"]
 )
 
@@ -251,7 +251,7 @@ lo que encaja con la personalidad agresiva del bot.
 == Ejemplo 3
 
 #figure(
-  image("assets/example3.png"),
+  image("../assets/example3.png"),
   caption: ["Ejemplo 3"]
 )
 
@@ -262,7 +262,7 @@ el bot atacará en $S_(t+1)$. Es decir el bot si se siente amenazado atacará au
 == Ejemplo 4
 
 #figure(
-  image("assets/example4.png"),
+  image("../assets/example4.png"),
   caption: ["Ejemplo 4"]
 )
 
@@ -276,7 +276,7 @@ tras encontrar el arma, lo siguiente que hará será atacar.
 == Ejemplo 5
 
 #figure(
-  image("assets/example5.png"),
+  image("../assets/example5.png"),
   caption: ["Ejemplo 5"]
 )
 

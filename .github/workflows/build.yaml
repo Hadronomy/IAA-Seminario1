@@ -35,4 +35,4 @@ jobs:
           name: "${{ github.ref_name }} — ${{ env.DATE }}"
           files: |
             informe.pdf
-            ModeladoBot.xdsl
+            assets/ModeladoBot.xdsl
