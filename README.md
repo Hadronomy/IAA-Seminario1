@@ -28,7 +28,8 @@ git clone git@github.com:Hadronomy/IAA-Seminario1.git
 poetry install
 ```
 
-> [!NOTE] If you don't have poetry installed
+> [!NOTE]
+> If you don't have poetry installed
 > you can install it by following the instructions [here](https://python-poetry.org/docs/).
 
 ## Usage
