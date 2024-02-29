@@ -15,14 +15,14 @@ jobs:
         uses: lvignoli/typst-action@main
         with:
           source_file: |
-            informe.typ
+            docs/informe.typ
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
           path: |
-            informe.pdf
+            docs/informe.pdf
 
       - name: Get current date
         id: date
@@ -34,5 +34,5 @@ jobs:
         with:
           name: "${{ github.ref_name }} — ${{ env.DATE }}"
           files: |
-            informe.pdf
+            docs/informe.pdf
             assets/ModeladoBot.xdsl
