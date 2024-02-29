@@ -24,7 +24,6 @@ def main():
     """
     net = pysmile.Network()
     net.read_file("assets/ModeladoBot.xdsl")
-    net.get_outcome_ids
     nodes = net.get_all_nodes()
     for node in nodes:
         if node != 1:
