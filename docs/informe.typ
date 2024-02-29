@@ -7,15 +7,15 @@
   title: "Seminario 1",
   subtitle: "Redes Bayesianas en Juegos",
   author: (
-    "Pablo Santana González", 
-    "Pablo Hernández Jiménez", 
+    "Pablo Santana González",
+    "Pablo Hernández Jiménez",
     "Álvaro Fontenla León"
   ),
   affiliation: "Universidad de La Laguna",
   date: datetime.today().display(),
   Licence: "Curso 2023-2024",
   UE: "Inteligencia Artificial Avanzada",
-  logo: "../assets/ull-logo.png",
+  logo: "/assets/ull-logo.png",
   main_color: "#5c068c",
   toc_title: "Índice",
 )
@@ -30,7 +30,7 @@ Y está basada en la publicación "Teaching Bayesian Behaviours to Video Game Ch
 == Porcentaje de Participación
 
 #tablex(
-  columns: 4, 
+  columns: 4,
   rows: 3,
   align: center + horizon,
   auto-vlines: false,
@@ -46,15 +46,15 @@ Y está basada en la publicación "Teaching Bayesian Behaviours to Video Game Ch
 = Red Utilizada
 
 #figure(
-  image("../assets/GeNIe.png"),
+  image("/assets/GeNIe.png"),
   caption: ["Red Bayesiana"]
 ) <red_bayesiana>
 
 == Descripción de la Red
 
-$ 
+$
     &P(S_t, S_(t+1), H, W, "OW", "HN", "NE", "PW", "PH") \
-    = &P(S_t)\ 
+    = &P(S_t)\
     &P(H|S_(t+1))\
     &P(W|S_(t+1))\
     &P("OW"|S_(t+1))\
@@ -63,7 +63,7 @@ $
     &P("PW"|S_(t+1))\
     &P("PH"|S_(t+1))
 $
- 
+
 == Respuesta a Cuestion Planteada en el Apartado 2
 
 A la cuestion "La factorización no sigue la causalidad pues
@@ -76,13 +76,13 @@ La principal razón por la que la red no se ha diseñado de esta manera es el ta
 
 === ¿Cómo sería la red puesta de forma causal? ¿Cuál el tamaño de las tablas?
 
-En la red causal, el nodo de $S_(t+1)$ dependería de todos los nodos de $S_t$, $H$, $W$, $"OW"$, $"HN"$, $"NE"$, $"PW"$, $"PH"$. 
+En la red causal, el nodo de $S_(t+1)$ dependería de todos los nodos de $S_t$, $H$, $W$, $"OW"$, $"HN"$, $"NE"$, $"PW"$, $"PH"$.
 Por lo que el tamaño de las tablas de probabilidad condicional sería de $2^7 * 6 = 768$ combinaciones a rellenar.
 Podemos observar que las combinaciones a rellenar son significativamente mayores si la red se diseñara de manera causal.
 
 = Personalidad del Bot
 
-Hemos considerado que el bot tiene una personalidad agresiva, por lo que atacará siempre que pueda. 
+Hemos considerado que el bot tiene una personalidad agresiva, por lo que atacará siempre que pueda.
 Sin embargo, tampoco queremos que sea un bot suicida, por lo que si detecta peligro, atacará con una probabilidad casi segura si no está herido, pero si lo está buscará energía hasta que la encuentre.
 
 = Justificación de las Tablas de Probabilidad Condicional
@@ -92,22 +92,22 @@ A continuación se justificará la tabla de probabilidad condicional de cada nod
 == Estado del Bot $S_t$
 
 #tablex(columns: 2, rows: 7,
-  [$S_t$], [%], 
+  [$S_t$], [%],
   [$"atacar"$],	[0.1666666666666667],
-  [$"recoger_arma"$], [0.1666666666666667], [$"recoger_energía"$], [0.1666666666666667], 
-  [$"explorar"$], [0.1666666666666667], 
-  [$"huir"$], [0.1666666666666667], 
+  [$"recoger_arma"$], [0.1666666666666667], [$"recoger_energía"$], [0.1666666666666667],
+  [$"explorar"$], [0.1666666666666667],
+  [$"huir"$], [0.1666666666666667],
   [$"detectar_peligro"$],	[0.1666666666666667]
 )
 
-Para esta tabla se ha considerado que el bot tiene una probabilidad uniforme de realizar cada acción. 
+Para esta tabla se ha considerado que el bot tiene una probabilidad uniforme de realizar cada acción.
 Puesto que no depende de ningún otro nodo.
 
 #pagebreak()
 
 == Estado del Bot $S_(t+1)$
 
-#tablex(columns: 7, rows: 6, 
+#tablex(columns: 7, rows: 6,
   [$S_t$], [*atacar*], [*buscar_armas*], [*buscar energia*], [*explorar*], [*huir*], [*detectar_peligro*],
   [*atacar*], [0.9999], [0.83329], [1e-05], [0.249995], [0.33332], [0.99995],
   [*buscar_armas*], [1e-05], [0.16666], [1e-05], [0.249995], [1e-05], [1e-05],
@@ -117,7 +117,7 @@ Puesto que no depende de ningún otro nodo.
   [*detectar_peligro*], [1-e05], [1e-05], [1e-05], [1e-05], [1e-05], [1e-05]
 )
 
-Donde cada columna representa el estado del bot en el tiempo $t$ y cada fila 
+Donde cada columna representa el estado del bot en el tiempo $t$ y cada fila
 representa el estado del bot en el tiempo $t+1$.
 
 Para esta tabla se han tenido las siguientes consideraciones para cada estado:
@@ -162,13 +162,13 @@ Para esta tabla se ha considerado que el bot tiene una probabilidad alta de atac
   [$"Desarmado"$], [0.1], [0.9], [0.5], [0.3], [0.9], [0.5]
 )
 
-Para esta tabla se ha considerado que el bot tiene una probabilidad alta de atacar si tiene armas y una probabilidad alta de buscar armas si no tiene armas. 
-Si no tiene armas, las probabilidaded de huir son extremadamente alta. 
+Para esta tabla se ha considerado que el bot tiene una probabilidad alta de atacar si tiene armas y una probabilidad alta de buscar armas si no tiene armas.
+Si no tiene armas, las probabilidaded de huir son extremadamente alta.
 Tambien tiene una probabilidad alta de explorar si tiene armas.
 
 == Estado del Sensor del Bot $"OW"$
 
-#tablex(columns: 7, rows: 2, 
+#tablex(columns: 7, rows: 2,
   [Armas\ Oponente], [$"atacar"$], [$"buscar_armas"$], [$"buscar_energia"$], [$"explorar"$], [$"huir"$], [$"detectar_peligro"$],
   [$"Armado"$], [0.49], [0.5], [0.5], [0.5], [0.5], [0.5],
   [$"Desarmado"$], [0.51], [0.5], [0.5], [0.5], [0.5], [0.5]
@@ -197,7 +197,7 @@ Tambien tiene una probabilidad alta de explorar si detecta un sonido.
   [$"No"$], [1e-05], [0.4], [0.4], [0.9999], [0], [0.9999]
 )
 
-Para esta tabla se ha considerado que el bot tiene una probabilidad alta de atacar si tiene enemigos cercanos, 
+Para esta tabla se ha considerado que el bot tiene una probabilidad alta de atacar si tiene enemigos cercanos,
 una probabilidad alta de buscar armas si no tiene enemigos cercanos y soló huirá si hay enemigos cercanos.
 
 == Estado del Sensor del Bot $"PW"$
@@ -227,23 +227,23 @@ Para esta tabla se ha considerado que el bot tiene una probabilidad alta de busc
 == Ejemplo 1
 
 #figure(
-  image("../assets/example1.png"),
+  image("/assets/example1.png"),
   caption: ["Ejemplo 1"]
 )
 
 Como se puede observar en la imagen, si el estado actual del
-bot es *atacar*, tiene la salud alta, no detecta sonido y no 
+bot es *atacar*, tiene la salud alta, no detecta sonido y no
 tiene enemigos cercanos, el estado del bot en $S_(t+1)$ tendrá una probabilidad alta de ser *explorar*.
 
 == Ejemplo 2
 
 #figure(
-  image("../assets/example2.png"),
+  image("/assets/example2.png"),
   caption: ["Ejemplo 2"]
 )
 
 Como se puede observar en la imagen, si el estado actual del bot
-es *huir* y tiene la salud baja, está armado y tiene enemigos cercanos lo más probable es que ataque en $S_(t+1)$, 
+es *huir* y tiene la salud baja, está armado y tiene enemigos cercanos lo más probable es que ataque en $S_(t+1)$,
 lo que encaja con la personalidad agresiva del bot.
 
 #pagebreak()
@@ -251,23 +251,23 @@ lo que encaja con la personalidad agresiva del bot.
 == Ejemplo 3
 
 #figure(
-  image("../assets/example3.png"),
+  image("/assets/example3.png"),
   caption: ["Ejemplo 3"]
 )
 
-En este caso se puede observar que si el estado actual del bot es *detectar_peligro* con casi total seguridad, 
-incluso con la salud baja y desarmado, 
+En este caso se puede observar que si el estado actual del bot es *detectar_peligro* con casi total seguridad,
+incluso con la salud baja y desarmado,
 el bot atacará en $S_(t+1)$. Es decir el bot si se siente amenazado atacará aunque no tenga armas, usando cuerpo a cuerpo o lo que pueda.
 
 == Ejemplo 4
 
 #figure(
-  image("../assets/example4.png"),
+  image("/assets/example4.png"),
   caption: ["Ejemplo 4"]
 )
 
 En esta situación el bot se encuentra en un estado de *explorar*, tiene la salud alta, está desarmado y tiene enemigos cercanos.
-Por tanto la decisión más probable del bot en $S_(t+1)$ es 
+Por tanto la decisión más probable del bot en $S_(t+1)$ es
 es buscar un arma y como observaremos en el siguiente ejemplo,
 tras encontrar el arma, lo siguiente que hará será atacar.
 
@@ -276,11 +276,11 @@ tras encontrar el arma, lo siguiente que hará será atacar.
 == Ejemplo 5
 
 #figure(
-  image("../assets/example5.png"),
+  image("/assets/example5.png"),
   caption: ["Ejemplo 5"]
 )
 
-Como mencionado en el ejemplo, tras encontrar un arma y tener enemigos cercanos, 
+Como mencionado en el ejemplo, tras encontrar un arma y tener enemigos cercanos,
 el bot con bastante seguridad atacará en $S_(t+1)$.
 
 #pagebreak()
