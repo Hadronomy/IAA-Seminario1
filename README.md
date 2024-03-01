@@ -24,8 +24,14 @@ git clone git@github.com:Hadronomy/IAA-Seminario1.git
 ### Install the dependencies
 
 ```bash
+pyenv install
 poetry install
 ```
+
+> [!NOTE]
+> If you don't have pyenv installed
+> you can install it by following the
+> instructions [here](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation).
 
 > [!NOTE]
 > If you don't have poetry installed
