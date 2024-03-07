@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "iaa-seminario1"
 version = "0.1.0"
-description = ""
+description = "Using bayesian networks for just about everything"
 authors = ["Pablo Hernández <17086478+Hadronomy@users.noreply.github.com>"]
-# readme = "README.md"
+readme = "README.md"
+packages = [{ include = "iaa_seminario1" }]
 
 [[tool.poetry.source]]
 name = "pysmile"
@@ -21,7 +22,11 @@ pandas = "^2.2.1"
 [tool.poetry.group.dev.dependencies]
 black = "^24.2.0"
 pre-commit = "^3.6.2"
+twine = "^5.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+iaa-seminario1 = "iaa_seminario1.__main__:main"
