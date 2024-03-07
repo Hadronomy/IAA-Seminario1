@@ -1,3 +1,4 @@
+import os
 import pysmile
 import typer
 import pandas as pd
@@ -8,6 +9,10 @@ from InquirerPy import inquirer
 import iaa_seminario1.license  # noqa: 403
 
 app = typer.Typer()
+
+fullpath = os.path.abspath(__file__)
+assets_dir = os.path.join(os.path.dirname(fullpath), "assets")
+bot_path = os.path.join(assets_dir, "ModeladoBot.xdsl")
 
 
 def evidence(net, node):
@@ -38,7 +43,7 @@ def probabilities():
     and then calculates the probability of the next state of the bot
     """
     net = pysmile.Network()
-    net.read_file("assets/ModeladoBot.xdsl")
+    net.read_file(bot_path)
     nodes = net.get_all_nodes()
     for node in nodes:
         if node != 1:
@@ -52,7 +57,7 @@ def probabilities():
 @app.command()
 def tendencies():
     net = pysmile.Network()
-    net.read_file("assets/ModeladoBot.xdsl")
+    net.read_file(bot_path)
     states = {
         2: "Alta",
         3: "Armado",
