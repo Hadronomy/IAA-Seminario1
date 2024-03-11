@@ -14,6 +14,7 @@ fullpath = os.path.abspath(__file__)
 assets_dir = os.path.join(os.path.dirname(fullpath), "assets")
 bot_path = os.path.join(assets_dir, "ModeladoBot.xdsl")
 
+
 def evidence(net, node):
     ids = net.get_outcome_ids(node)
     name = net.get_node_name(node)

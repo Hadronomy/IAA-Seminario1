@@ -16,9 +16,13 @@
   // Set the document's basic properties.
   set document(author: author, title: title)
 
-  // Save heading and body font families in variables.
-  let body-font = "Rethink Sans"
-  let sans-font = "Open Sans"
+  // latex looks
+  set page(margin: 1.0in)
+  set par(leading: 0.55em, first-line-indent: 1.8em, justify: true)
+  set text(font: "NewComputerModern")
+  show raw: set text(font: "NewComputerModern Mono")
+  show par: set block(spacing: 0.55em)
+  show heading: set block(above: 2em, below: 1.4em)
 
   // Set colors
   let primary-color = rgb(main_color) // alpha = 100%
@@ -27,15 +31,42 @@
 
   show "highlight" : it => text(fill: primary-color)[#it]
 
-  //customize look of figure
-  set figure.caption(separator: [ --- ], position: top)
+  // figures
+  show figure.caption: it => [
+    *#it.supplement #it.counter.display(it.numbering)*: #it.body
+  ]
+  show figure.where(kind: table): it => {
+    set figure.caption(position: top)
+    set align(center)
+    v(12.5pt, weak: true)
+    if it.has("caption") {
+      it.caption
+      v(0.25em)
+    }
+    it.body
+    v(1em)
+  } 
+  show figure.where(kind: image): it => {
+    set align(center)
+    show: pad.with(x: 13pt)
+    v(12.5pt, weak: true)
+
+    // Display the figure's body.
+    it.body
+
+    // Display the figure's caption.
+    if it.has("caption") {
+      it.caption
+    }
+    v(1em)
+  }
 
   //customize inline raw code
   show raw.where(block: false) : it => h(0.5em) + box(fill: primary-color.lighten(90%), outset: 0.2em, it) + h(0.5em)
 
   // Set body font family.
-  set text(font: body-font, lang: "es", 12pt)
-  show heading: set text(font: sans-font, fill: primary-color)
+  set text(lang: "es", 12pt)
+  show heading: set text(fill: primary-color)
 
   //heading numbering
 set heading(numbering: (..nums) => {
@@ -52,7 +83,8 @@ set heading(numbering: (..nums) => {
 })
  
   // Set link style
-  show link: it => underline(text(fill: primary-color, it))
+  show link: it => text(blue, it)
+  show footnote: it => text(blue, it)
 
   //pagebreak before first heading and space after
   //show heading.where(level:1): it => pagebreak(weak: true) + it + v(0.5em)
@@ -88,9 +120,9 @@ set heading(numbering: (..nums) => {
   
   v(2fr)
 
-  align(center, text(font: sans-font, 3em, weight: 700, title))
+  align(center, text(3em, weight: 700, title))
   v(2em, weak: true)
-  align(center, text(font: sans-font, 2em, weight: 700, subtitle))
+  align(center, text(2em, weight: 700, subtitle))
   v(2em, weak: true)
   align(center, text(1.1em, date))
 
