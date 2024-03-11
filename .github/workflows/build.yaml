@@ -35,4 +35,4 @@ jobs:
           name: "${{ github.ref_name }} — ${{ env.DATE }}"
           files: |
             docs/informe.pdf
-            assets/ModeladoBot.xdsl
+            iaa_seminario1/assets/ModeladoBot.xdsl
