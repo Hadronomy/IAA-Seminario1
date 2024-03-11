@@ -4,10 +4,7 @@ version = "0.1.0"
 description = "Using bayesian networks for just about everything"
 authors = ["Pablo Hernández <17086478+Hadronomy@users.noreply.github.com>"]
 readme = "README.md"
-packages = [
-  { include = "iaa_seminario1" },
-  { include = "assets/*", to = "iaa_seminario1" },
-]
+packages = [{ include = "iaa_seminario1" }]
 
 [[tool.poetry.source]]
 name = "pysmile"
