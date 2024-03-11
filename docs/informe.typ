@@ -194,4 +194,15 @@ con los obtenidos si los infiriéramos con el `GeNIe`, véase @genie-infer.
 
 #pagebreak()
 
+= Conclusión
+
+Este seminario nos ha demostrado cómo diseñar y analizar una red bayesiana para modelar 
+el comportamiento de un bot en un videojuego haciendo uso de la herramienta GeNIe.
+Además, se desarrolló un programa haciendo uso de la licencia SMILE que utiliza esta red 
+bayesiana para tomar decisiones basadas en observaciones recibidas durante el juego, permitiéndonos
+simular el comportamiento que tendría el bot en tiempo de juego.
+
+En resumen, este seminario nos ha proporcionado una comprensión práctica y aplicada de cómo las redes 
+bayesianas pueden ser utilizadas para modelar y predecir el comportamiento de personajes en juegos.
+
 #bibliography("bibliography.bib")
