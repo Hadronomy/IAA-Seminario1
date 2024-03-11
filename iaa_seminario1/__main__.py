@@ -14,7 +14,6 @@ fullpath = os.path.abspath(__file__)
 assets_dir = os.path.join(os.path.dirname(fullpath), "assets")
 bot_path = os.path.join(assets_dir, "ModeladoBot.xdsl")
 
-
 def evidence(net, node):
     ids = net.get_outcome_ids(node)
     name = net.get_node_name(node)
@@ -56,6 +55,12 @@ def probabilities():
 
 @app.command()
 def tendencies():
+    """
+    Reads the bot model and calculates the next state of the bot.
+    If the next state is the same as the previous state,
+    it will count as a repetition, if there are 20 repetitions
+    the loop will stop
+    """
     net = pysmile.Network()
     net.read_file(bot_path)
     states = {
