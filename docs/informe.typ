@@ -158,6 +158,7 @@ El bot inicia con los estados mostrados en
     [Armas Cercanas], [Si],
     [Paquete de Salud Cercano], [Si],
   ),
+  kind: table,
   caption: "Valores iniciales de los nodos",
 ) <tend-values>
 
