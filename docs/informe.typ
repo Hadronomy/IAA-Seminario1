@@ -205,4 +205,6 @@ simular el comportamiento que tendría el bot en tiempo de juego.
 En resumen, este seminario nos ha proporcionado una comprensión práctica y aplicada de cómo las redes 
 bayesianas pueden ser utilizadas para modelar y predecir el comportamiento de personajes en juegos.
 
+#pagebreak()
+
 #bibliography("bibliography.bib")
