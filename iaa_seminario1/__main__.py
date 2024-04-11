@@ -4,6 +4,7 @@ import typer
 import pandas as pd
 import numpy as np
 import warnings
+from enum import Enum
 from InquirerPy import inquirer
 
 import iaa_seminario1.license  # noqa: 403
@@ -12,7 +13,17 @@ app = typer.Typer()
 
 fullpath = os.path.abspath(__file__)
 assets_dir = os.path.join(os.path.dirname(fullpath), "assets")
-bot_path = os.path.join(assets_dir, "ModeladoBot.xdsl")
+dataset_path = os.path.join(assets_dir, "dataset.csv")
+
+class BotModel(Enum):
+    DEFAULT = "default"
+    LEARNING = "learning"
+
+def bot_model_path(value: BotModel):
+    if value == BotModel.DEFAULT:
+        return os.path.join(assets_dir, "ModeladoBot.xdsl")
+    elif value == BotModel.LEARNING:
+        return os.path.join(assets_dir, "ModeladoBot-aprendizaje.xdsl")
 
 
 def evidence(net, node):
@@ -37,13 +48,13 @@ def calculate_next_state(net):
 
 
 @app.command()
-def probabilities():
+def probabilities(bot_model: BotModel = BotModel.DEFAULT):
     """
     Reads the bot model and asks for the evidence of each node
     and then calculates the probability of the next state of the bot
     """
     net = pysmile.Network()
-    net.read_file(bot_path)
+    net.read_file(bot_model_path(bot_model))
     nodes = net.get_all_nodes()
     for node in nodes:
         if node != 1:
@@ -55,7 +66,7 @@ def probabilities():
 
 
 @app.command()
-def tendencies():
+def tendencies(bot_model: BotModel = BotModel.DEFAULT):
     """
     Reads the bot model and calculates the next state of the bot.
     If the next state is the same as the previous state,
@@ -63,7 +74,7 @@ def tendencies():
     the loop will stop
     """
     net = pysmile.Network()
-    net.read_file(bot_path)
+    net.read_file(bot_model_path(bot_model))
     states = {
         2: "Alta",
         3: "Armado",
@@ -102,6 +113,26 @@ def tendencies():
         previous_state = next_state
         states[0] = next_state
         total_iterations += 1
+
+@app.command()
+def learn():
+    """
+    Reads the dataset and calculates the conditional probabilities
+    of the bot model using pandas
+    """
+    dataset = pd.read_csv(dataset_path)
+    sum = dataset.groupby("St").size().sum()
+    print(dataset.groupby("St").size() / sum)
+    print(dataset.groupby(["St", "st_1"]).size() / dataset.groupby("St").size())
+    print(dataset.groupby(["st_1", "H"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "HN"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "NE"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "OW"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "PH"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "PW"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "W"]).size() / dataset.groupby("st_1").size())
+
+    
 
 
 def main():
