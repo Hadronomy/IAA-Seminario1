@@ -121,7 +121,18 @@ def learn():
     of the bot model using pandas
     """
     dataset = pd.read_csv(dataset_path)
-    print(dataset.groupby("HN").size())
+    sum = dataset.groupby("St").size().sum()
+    print(dataset.groupby("St").size() / sum)
+    print(dataset.groupby(["St", "st_1"]).size() / dataset.groupby("St").size())
+    print(dataset.groupby(["st_1", "H"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "HN"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "NE"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "OW"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "PH"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "PW"]).size() / dataset.groupby("st_1").size())
+    print(dataset.groupby(["st_1", "W"]).size() / dataset.groupby("st_1").size())
+
+    
 
 
 def main():
