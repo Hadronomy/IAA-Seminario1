@@ -8,7 +8,7 @@
   subtitle: [
     Redes Bayesianas en Juegos
     
-    Parte 2
+    Parte 3
   ],
   author: (
     "Pablo Santana González",
