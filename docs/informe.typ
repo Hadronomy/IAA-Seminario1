@@ -195,6 +195,33 @@ con los obtenidos si los infiriéramos con el `GeNIe`, véase @genie-infer.
 
 #pagebreak()
 
+= Aprendizaje del bot
+
+== Aprendizaje adoptado en el artículo
+
+Los creadores del bot han adoptado un enfoque diferente para enseñarle comportamientos, 
+buscando un mayor dinamismo en su aprendizaje. 
+En lugar de especificar todas las probabilidades manualmente, 
+ahora permiten que el bot aprenda observando y reaccionando a las acciones del jugador en tiempo real.
+
+Para facilitar este proceso de aprendizaje, han desarrollado una interfaz simple que permite 
+al jugador controlar directamente el comportamiento del bot durante el juego. 
+Esta interfaz proporciona al jugador botones que le permiten cambiar entre diferentes acciones, 
+como atacar, huir o explorar, con facilidad y en tiempo real.
+
+Además, los creadores del bot han implementado un sistema de reconocimiento de comportamientos 
+basado en heurísticas programadas de manera imperativa. 
+Este sistema analiza las acciones del jugador para identificar patrones clave que indican ciertos comportamientos, 
+como atacar o huir. Por ejemplo, puede detectar la distancia a los enemigos, 
+la velocidad de movimiento y otras señales relevantes para determinar el comportamiento del bot.
+
+Este proceso de reconocimiento se realiza utilizando datos recopilados durante el juego, 
+lo que permite mejorar continuamente el comportamiento del bot. 
+En resumen, el enfoque que han adaptado los creadores del bot le ha permitido aprender de manera 
+más efectiva y adaptarse a diferentes estilos de juego, acercándolo cada vez más al nivel de habilidad de un jugador.
+
+#pagebreak()
+
 = Conclusión
 
 Este seminario nos ha demostrado cómo diseñar y analizar una red bayesiana para modelar 
