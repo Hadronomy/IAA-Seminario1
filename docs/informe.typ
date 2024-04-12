@@ -262,7 +262,7 @@ las tablas generadas por el `GeNIe` y por nuestro programa son idénticas.
 
 #figure(
   image(
-    "images/estado-futuro-bot-aprendizaje.PNG",
+    "images/estado-futuro-aprendizaje.PNG",
   ),
   caption: [Tabla en `GeNIe`],
 ) <genie-learn-future-state>
