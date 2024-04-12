@@ -15,9 +15,11 @@ fullpath = os.path.abspath(__file__)
 assets_dir = os.path.join(os.path.dirname(fullpath), "assets")
 dataset_path = os.path.join(assets_dir, "dataset.csv")
 
+
 class BotModel(Enum):
     DEFAULT = "default"
     LEARNING = "learning"
+
 
 def bot_model_path(value: BotModel):
     if value == BotModel.DEFAULT:
@@ -48,7 +50,7 @@ def calculate_next_state(net):
 
 
 @app.command()
-def probabilities(bot_model: BotModel = BotModel.DEFAULT):
+def probabilities(bot_model: BotModel = BotModel.DEFAULT.value):
     """
     Reads the bot model and asks for the evidence of each node
     and then calculates the probability of the next state of the bot
@@ -66,7 +68,7 @@ def probabilities(bot_model: BotModel = BotModel.DEFAULT):
 
 
 @app.command()
-def tendencies(bot_model: BotModel = BotModel.DEFAULT):
+def tendencies(bot_model: BotModel = BotModel.DEFAULT.value):
     """
     Reads the bot model and calculates the next state of the bot.
     If the next state is the same as the previous state,
@@ -114,8 +116,9 @@ def tendencies(bot_model: BotModel = BotModel.DEFAULT):
         states[0] = next_state
         total_iterations += 1
 
+
 @app.command()
-def learn():
+def learn(dataset_path: str = dataset_path):
     """
     Reads the dataset and calculates the conditional probabilities
     of the bot model using pandas
@@ -131,8 +134,6 @@ def learn():
     print(dataset.groupby(["st_1", "PH"]).size() / dataset.groupby("st_1").size())
     print(dataset.groupby(["st_1", "PW"]).size() / dataset.groupby("st_1").size())
     print(dataset.groupby(["st_1", "W"]).size() / dataset.groupby("st_1").size())
-
-    
 
 
 def main():
