@@ -31,12 +31,10 @@ En este seminario se va a realizar el diseño y análisis de una red bayesiana q
 La implementación de la red bayesiana se ha realizado con el software `GeNIe` y se ha exportado a un archivo `.xdsl`.
 Y está basada en la publicación "Teaching Bayesian Behaviours to Video Game Characters". @article
 
-En esta segunda parte del seminario, implementamos un programa
-de `SMILE` que utiliza la red bayesiana para tomar decisiones
-en función de las observaciones que recibe.
-
-También observaremos la tendencia del bot a realizar ciertas
-acciones a lo largo del tiempo en función de un estado inicial y el estado de sus sensores.
+En esta tercera parte se expande sobre el programa
+implementado en la segunda parte, para implementar
+la funcionalidad de aprendizaje usando una red que ha
+sido exportada a un archivo `.xdsl` y otra generada por python.
 
 Todos los archivos necesarios para la realización de este
 seminario se encuentran en el repositorio de GitHub del
@@ -74,13 +72,15 @@ tomar decisiones en función de las observaciones que recibe.
   caption: "Ayuda del programa",
 )
 
-Existen dos subcomandos que se pueden ejecutar:
+Existen tres subcomandos que se pueden ejecutar:
 
 #par(first-line-indent: 0em)[
 
 / probabilities: Lee el modelo del bot y pide la evidencia de cada nodo y luego calcula la probabilidad del siguiente estado del bot.
 
 / tendencies: Lee el modelo del bot y calcula el siguiente estado del bot. Si el siguiente estado es el mismo que el estado anterior, contará como una repetición, si hay 20 repeticiones el bucle se detendrá.
+
+/ learn: Lee un fichero de datos sobre los distintos estados del bot en cada momento y calcula las probabilidades de los nodos de la red bayesiana.
 
 ]
 
@@ -222,16 +222,12 @@ más efectiva y adaptarse a diferentes estilos de juego, acercándolo cada vez m
 
 == Nuestro enfoque de aprendizaje
 
-En nuestro caso, hemos adoptado un enfoque más simple para el aprendizaje del bot.
-
-Hemos implementado un programa que utiliza una red bayesiana para tomar decisiones
+En nuestro caso, hemos adoptado un enfoque más simple para el aprendizaje del bot. Hemos implementado un programa que utiliza una red bayesiana para tomar decisiones
 en función de las observaciones que recibe.
 
 Este enfoque nos permite simular el comportamiento del bot en tiempo de juego,
 sin necesidad de un sistema de reconocimiento de comportamientos basado en
-heurísticas programadas de manera imperativa.
-
-En lugar de eso, nuestro bot aprende de manera más estática, basándose en las 
+heurísticas programadas de manera imperativa. En lugar de eso, nuestro bot aprende de manera más estática, basándose en las 
 probabilidades de los nodos de la red bayesiana.
 
 El aprendizaje en concreto se realiza mediante la probabilidad calculada
@@ -303,8 +299,11 @@ Además, se desarrolló un programa haciendo uso de la licencia SMILE que utiliz
 bayesiana para tomar decisiones basadas en observaciones recibidas durante el juego, permitiéndonos
 simular el comportamiento que tendría el bot en tiempo de juego.
 
-En resumen, este seminario nos ha proporcionado una comprensión práctica y aplicada de cómo las redes 
-bayesianas pueden ser utilizadas para modelar y predecir el comportamiento de personajes en juegos.
+En la tercera parte de este seminario, se ha expandido el programa implementado en la segunda parte y hemos
+aprendido a entrenar las redes bayesianas con un fichero de
+datos sobre los distintos estados del bot en cada momento.
+Además de cómo realizar el mismo proceso de aprendizaje usando
+únicamente python.
 
 #pagebreak()
 
