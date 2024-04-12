@@ -220,6 +220,79 @@ lo que permite mejorar continuamente el comportamiento del bot.
 En resumen, el enfoque que han adaptado los creadores del bot le ha permitido aprender de manera 
 más efectiva y adaptarse a diferentes estilos de juego, acercándolo cada vez más al nivel de habilidad de un jugador.
 
+== Nuestro enfoque de aprendizaje
+
+En nuestro caso, hemos adoptado un enfoque más simple para el aprendizaje del bot.
+
+Hemos implementado un programa que utiliza una red bayesiana para tomar decisiones
+en función de las observaciones que recibe.
+
+Este enfoque nos permite simular el comportamiento del bot en tiempo de juego,
+sin necesidad de un sistema de reconocimiento de comportamientos basado en
+heurísticas programadas de manera imperativa.
+
+En lugar de eso, nuestro bot aprende de manera más estática, basándose en las 
+probabilidades de los nodos de la red bayesiana.
+
+El aprendizaje en concreto se realiza mediante la probabilidad calculada
+a partir de un fichero de datos sobre los distintos estados del bot en cada
+momento.
+
+#pagebreak()
+
+== Comparación de las tablas
+
+A continuación, se muestra una comparación entre las tablas de probabilidades
+entre las generadas por el `GeNIe` y las generadas por nuestro programa.
+
+#figure(
+  image(
+    "images/arma-aprendizaje.PNG",
+  ),
+  caption: [Tabla en `GeNIe`],
+) <genie-learn-weapon>
+
+#figure(
+  image(
+    "images/arma-aprendizaje-python.png",
+    width: 50%
+  ),
+  caption: [Tabla en Python],
+) <python-learn-weapon>
+
+Como podemos observar en las @genie-learn-weapon y @python-learn-weapon,
+las tablas generadas por el `GeNIe` y por nuestro programa son idénticas.
+
+
+#figure(
+  image(
+    "images/estado-futuro-bot-aprendizaje.PNG",
+  ),
+  caption: [Tabla en `GeNIe`],
+) <genie-learn-future-state>
+
+#figure(
+  image(
+    "images/estado-futuro-bot-aprendizaje-python.png",
+    width: 50%
+  ),
+  caption: [Tabla en Python],
+) <python-learn-future-state>
+
+De igual manera que en las anteriores tablas, las tablas @genie-learn-future-state
+y @python-learn-future-state son idénticas.
+
+Esto ocurre con todas las tablas generadas por el `GeNIe` y
+por nuestro programa, siendo siempre iguales.
+
+// #figure(
+//   image(
+//     "images/prob-usage-1.png",
+//   ),
+//   caption: [Ejemplo de uso del subcomando `probabilities`],
+// ) <probability-usage-1>
+
+
 #pagebreak()
 
 = Conclusión
