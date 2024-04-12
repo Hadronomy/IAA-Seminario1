@@ -36,3 +36,4 @@ jobs:
           files: |
             docs/informe.pdf
             iaa_seminario1/assets/ModeladoBot.xdsl
+            iaa_seminario1/assets/ModeladoBot-aprendizaje.xdsl
